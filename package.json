@@ -1,12 +1,19 @@
 {
   "name": "ica1-cicd-weather",
   "version": "1.0.0",
-  "homepage": "https://yonjansaroj.github.io/ICA1-CICD",
+  "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
   "scripts": {
     "inject": "node scripts/inject-api-key.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0"
-  }
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+  "outputDirectory": "test-results",
+  "outputName": "junit.xml"
 }
-
+}

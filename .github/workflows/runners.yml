@@ -1,0 +1,18 @@
+name: Self-hosted Runner Test
+
+on: workflow_dispatch
+
+jobs:
+  linux-runner:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Check OS
+        run: uname -a
+
+  windows-runner:
+    runs-on: [self-hosted, windows]
+    steps:
+      - name: Check OS
+        run: systeminfo
+          if-no-files-found: error
+          retention-days: 5 #default is 90 days
