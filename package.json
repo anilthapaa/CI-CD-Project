@@ -1,22 +1,26 @@
 {
   "name": "ica1-cicd-weather",
   "version": "1.0.0",
-  "homepage": "https://aneelthapaa.github.io/CI-CD-Project",
+  "description": "Weather App with CI/CD, Docker, Jest, and GitHub Pages",
+  "homepage": "https://anilthapaa.github.io/CI-CD-Project",
+  "main": "index.js",
   "scripts": {
-    "inject": "node scripts/inject-api-key.js"
+    "inject": "node scripts/inject-api-key.js",
+    "test": "jest --ci --reporters=default --reporters=jest-junit"
   },
   "dependencies": {
     "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "jest": "^30.0.4",
+    "jest-fetch-mock": "^4.0.2",
     "jest-junit": "^16.0.0"
   },
-  "jest-junit": {
-  "outputDirectory": "test-results",
-  "outputName": "junit.xml"
-},
   "jest": {
-  "setupFiles": ["jest-fetch-mock"]
-}
+    "setupFiles": ["./jest.setup.js"]
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results",
+    "outputName": "junit.xml"
+  }
 }
